@@ -20,7 +20,7 @@ build: Dockerfile
 	docker build -t $(IMAGE) .
 
 test: build
-	-docker run --rm -v $(CWD_ABSOLUTE):/src mcandre/docker-checkbashisms checkbashisms /src/lib/script.sh
+	-docker run --rm -v $(CWD_ABSOLUTE):/src mcandre/docker-checkbashisms /src/lib/script.sh
 
 clean-containers:
 	-docker ps -a | grep -v IMAGE | awk '{ print $$1 }' | xargs docker rm -f

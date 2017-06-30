@@ -6,7 +6,7 @@
 $ make
 docker build -t mcandre/docker-checkbashisms
 
-docker run --rm -v $(pwd):/src mcandre/docker-checkbashisms checkbashisms /src/lib/script.sh
+docker run --rm -v $(pwd):/src mcandre/docker-checkbashisms /src/lib/script.sh
 possible bashism in /src/lib/script.sh line 3 (alternative test command ([[ foo ]] should be [ foo ])):
 [[ -r "$HOME/.bashrc" ]] && echo "~/.bashrc is readable"
 ```
